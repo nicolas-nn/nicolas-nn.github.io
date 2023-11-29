@@ -1,0 +1,40 @@
+.box-connexion{
+    display: flex; 
+    padding-bottom: 143px;
+    align-items: center;
+}
+
+.dim-img{  
+    width: 40%;
+}
+
+.dim-box-img{
+    text-align: center;
+}
+
+/* Ecran avec une largeur max 570px*/
+@media screen and (max-width: 570px) {
+   .box-connexion{
+        padding: 20px;
+        justify-content: center;
+       
+   }
+   .dim-box-img{
+        display: none;
+   }
+
+}
+
+@media screen and (min-width: 571px) and (max-width: 575px) {
+    .box-connexion{
+        padding: 20px;
+       
+   }
+}
+
+@media screen and (min-width: 1200px) {
+    .box-connexion{
+       justify-content: center;
+    
+   }
+}

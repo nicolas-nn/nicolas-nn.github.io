@@ -1,0 +1,16 @@
+.container-form
+{
+ display:flex;
+ justify-content: space-around;
+}  
+
+form{
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.title{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}

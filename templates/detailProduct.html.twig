@@ -1,0 +1,199 @@
+{% extends 'base.html.twig' %}
+{% block title %}Detail{% endblock %}
+
+{% block body %}
+  {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+    <div class="container-lg p-5">
+      <div class="return">
+        <a action="action" onclick="window.history.go(-1); return false;" type="submit">
+          <i class="fa-solid fa-arrow-left gold"></i>
+        </a>
+        <p>Return to results</p>
+      </div>
+      <h1 class="text-center my-5">Obsolecence detail</h1>
+      <section class="detailProduct">
+        <div class="cardProduct">
+          <div class="col-md-10">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">{{product.brand}} - {{product.reference}} </strong>
+              <div class="mb-1 text-muted">{{product.date|date('Y')}}</div>
+
+                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                {%  set calculMoyenne = ((product.documentation  + product.demountability + product.spare_part  )/ 3 )|round %}
+                <p class="card-text mb-auto">Average grade: {{ calculMoyenne }} </p>
+                <a href="#" class="stretched-link">back to results</a>
+
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                  <img src="../images/products/default.png" alt="pc" width="200" height="250" class="bd-placeholder-img" >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cardObso">
+          <div class="col-md-14">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col-auto d-none d-lg-block">
+                {% if calculMoyenne < 5 %}
+									<img class="card-img-top logo-obso" src="../build/img/logo-pc-3.png" alt="Card image cap">
+								{% elseif calculMoyenne < 7 %}
+									<img class="card-img-top logo-obso" src="../build/img/logo-pc-2.png" alt="Card image cap">
+								{% else %}
+									<img class="card-img-top logo-obso" src="../build/img/logo-pc-1.png" alt="Card image cap">
+								{% endif %}
+              </div>
+              <div class="col p-4 d-flex flex-column position-static">
+                {% if calculMoyenne < 5 %}
+							  	<strong class="d-inline-block mb-2 text-primary">{{ descriptions[2].status|upper }}</strong>
+                  <p class="card-text mb-auto">{{ descriptions[2].description }}</p>								
+                {% elseif calculMoyenne < 7 %}
+							    <strong class="d-inline-block mb-2 text-primary">{{ descriptions[1].status|upper }}</strong>
+                  <p class="card-text mb-auto">{{ descriptions[1].description }}</p>								
+                {% else %}
+							    <strong class="d-inline-block mb-2 text-primary">{{ descriptions[0].status|upper }}</strong>
+                  <p class="card-text mb-auto">{{ descriptions[0].description }}</p>
+							  {% endif %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="allCharts">
+      <div class="histogram">
+        <p class="text-center">Comparative histogram</p>
+        <canvas id="chart_bar" height="140vw" width="180vw"></canvas>
+      </div>
+      <div class="pieChart">
+        <p class="text-center">Pie chart of {{product.brand}} - {{product.reference}}</p>
+        <canvas id="chart_pie" height="140vw" width="180vw"></canvas>
+      </div>
+      <div class="lineChart">
+        <p class="text-center">Evolutive chart</p>
+        <canvas id="chart_line" height="140vw" width="180vw"></canvas>
+      </div>
+      </section>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block javascript %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+var data_demountability = {
+  labels: ["{{product.brand}}", "HP", "Why", "Laptop", "Razer", "Microsoft", "Intel"],
+  datasets: [
+    {
+      label: "Demountabilty",
+      backgroundColor: "rgba(255,99,132,0.2)",
+      borderColor: "rgba(255,99,132,1)",
+      borderWidth: 2,
+      hoverBackgroundColor: "rgba(255,99,132,0.4)",
+      hoverBorderColor: "rgba(255,99,132,1)",
+      data: [{{product.demountability}}, 0, 1, 4, 5, 9, 3]
+    }
+  ]
+};
+
+var data_priceSpareParts = {
+  labels: ["spare_part", "specific", "price", "demount", "doc"],
+  datasets: [
+    {
+      
+      backgroundColor: ["red","blue","green","rgba(255,99,132,0.2)","purple"],
+     
+      borderWidth: 2,
+      hoverBackgroundColor: "rgba(255,99,132,0.4)",
+      hoverBorderColor: "rgba(255,99,132,1)",
+      data: [11.8, 14.9, 20, 14.5, 85]
+    }
+  ]
+};
+var data = {
+  labels: ["2010", "2011", "2012", "2013", "2013", "2014", "2015"],
+  datasets: [
+    {
+      label: "price spare parts of {{product.brand}}",
+      backgroundColor: "orange",
+      borderColor: "yellow",
+      borderWidth: 2,
+      hoverBackgroundColor: "rgba(255,99,132,0.4)",
+      hoverBorderColor: "rgba(255,99,132,1)",
+      data: [650, 590, 600, 580, 560, 550, 400]
+    }
+  ]
+};
+
+var option = {
+  responsive: true,
+  scales: {
+    y: {
+      stacked: true,
+      grid: {
+        display: false,
+        color: "rgba(255,99,132,0.2)"
+      }
+    },
+    x: {
+      grid: {
+        display: false
+      }
+    }
+  }
+};
+var optionBar = {
+  responsive: true,
+  scales: {
+    y: {
+      stacked: true,
+      grid: {
+        display: true,
+        color: "rgba(255,99,132,0.2)"
+      }
+    },
+    x: {
+      grid: {
+        display: true
+      }
+    }
+  }
+};
+var optionPie = {
+  responsive: true,
+  scales: {
+      xAxes: [{
+          ticks: {
+              display: false
+          }
+      }]
+  }
+}
+
+let chartBar = new Chart("chart_bar", {
+  type: "bar",
+  options: optionBar,
+  data: data_demountability
+});
+
+let chartPie = new Chart("chart_pie", {
+  type: "pie",
+  options: optionPie,
+  data: data_priceSpareParts
+});
+let chartLine = new Chart("chart_line", {
+  type: "line",
+  options: option,
+  data: data
+});
+window.addEventListener('beforeprint', () => {
+  chartBar.resize(500, 500);
+  chartPie.resize(300, 300);
+  chartLine.resize(400, 400);
+});
+{# chartBar.resize(1000, 1000);
+chartPie.resize(300, 300);
+chartLine.resize(600, 600); #}
+</script>
+{% endblock %}      

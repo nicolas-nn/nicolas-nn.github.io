@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg bg-light sticky-top shadow">
+	<div class="container-fluid d-flex justify-content-between">
+		<div>
+			<a href="/" class="navbar-brand text-decoration-none logo-rectangle">
+				<img src="{{ asset('build/img/logo-obs-tracker-horizontal.png') }}" class="ms-5" width="320" height="42" alt="Obsolescence tracker">
+
+			</a>
+			<a href="/" class="navbar-brand text-decoration-none logo-carre">
+				<img src="{{ asset('build/img/obs-tracker-logo-carre-90.png') }}" class="ms-5 dim-logo-carre" width="320" height="42" alt="Obsolescence tracker">
+			</a>
+		</div>
+		<button class="navbar-toggler me-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse ps-5" id="navbarSupportedContent">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item col-sm-auto">
+					<a class="nav-link header" href="{{ path('app_index') }}">Home</a>
+				</li>
+				<li class="nav-item col-sm-auto">
+					<a class="nav-link header" href="{{ path('app_research') }}">Research</a>
+				</li>
+				<li class="nav-item col-sm-auto">
+					<a class="nav-link header" href="{{ path('app_faq') }}">FAQ</a>
+				</li>
+				<li class="nav-item col-sm-auto">
+					<a class="nav-link header" href="{{ path('app_contact') }}">Contact</a>
+				</li>
+			</ul>
+			{% if app.user %}
+				<h6 class="title-hello ">Hello
+					<span class="client-name">{{ app.user.username }}</span>
+				</h6>
+				<ul class="navbar-nav align-items-start">
+					<li class="nav-item col-sm-auto btn-signup-navbar-collapse me-2">
+						<a class="btn btn-outline-success" href="{{ path('app_account') }}" role="button">My Account</a>
+					</li>
+					<li class="nav-item col-sm-auto me-5">
+						<a class="btn btn-outline-warning" href="{{ path('app_logout') }}" role="button">Disconnect</a>
+					</li>
+				</ul>
+			{% else %}
+				<ul class="navbar-nav align-items-start">
+					<li class="nav-item col-sm-auto btn-signup-navbar-collapse me-2">
+						<a class="btn btn-outline-success" href="{{ path('app_register') }}" role="button">Sign up</a>
+					</li>
+					<li class="nav-item col-sm-auto me-5">
+						<a class="btn btn-outline-warning" href="{{ path('app_login') }}" role="button">Login</a>
+					</li>
+				</ul>
+			{% endif %}
+		</div>
+	</div>
+</nav>

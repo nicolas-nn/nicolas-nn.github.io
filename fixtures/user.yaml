@@ -1,0 +1,6 @@
+App\Entity\User :
+  user_1:
+    email: admin@admin.fr
+    username: admin
+    password: <hashPassword('admin')>
+    roles: [ROLE_ADMIN]

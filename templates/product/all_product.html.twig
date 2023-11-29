@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List produts{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Reference</th>
+            <th>Date</th>
+            <th>Documentation</th>
+            <th>Spare Part</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <a href="{{path('app_add_product')}}">Add a product</a>
+
+        {% for product in products %}
+            <tr>
+                <td>{{ product.brand }}</td>
+                <td>{{ product.reference }}</td>
+                <td>{{ product.date|date('Y-m-d') }}</td>
+                <td>{{ product.demountability }}</td>
+
+                <td>{{ product.documentation }}</td>
+                <td>{{ product.sparePart }}</td>
+                <td>
+                    <a href="{{ path('app_edit_product', {'id': product.id}) }}">Modify</a>
+                    <a href="{{ path('product_delete', {'id': product.id}) }}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

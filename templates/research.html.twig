@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block title %}Research{% endblock %}
+{% block body %}
+	{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+		<section class="container-sm py-5 my-5">
+			<div class="container-lg d-flex aligns-items-center justify-content-center my-2">
+				<img src="{{ asset('build/img/research-img-header-300.png') }}" width="300px" height="301px" alt="Research image"/>
+			</div>
+			<div class="container-lg text-center my-3">
+				<h2>Research</h2>
+			</div>
+			<div class="row justify-content-center px-5 pb-5">
+				<div class="col-12 col-lg-5 col-md-12 col-sm-6 card bg-green-light border-success-ot rounded-3 m-3 p-3">
+					<div class="card-body">
+						<h4 class="card-title text-white">Which is the obsolescence of my computer ?</h4>
+						<p>Find the durability index of your computer.</p>
+						<hr class="text-white">
+						<p class="card-text text-white">You can search for a specific device by :</p>
+						<ul class="text-white">
+							<li>brand</li>
+							<li>model</li>
+							<li>year</li>
+						</ul>
+						<p class="card-text text-white">This table includes devices with release dates through today. The data on which the information and ratings of the devices are based was provided by the computer suppliers. The Obsolescence Tracker application assumes no responsibility for the completeness and accuracy of this information.</p>
+					</div>
+				</div>
+				<div class="col-12 col-lg-5 col-md-12 col-sm-6 card border-success-ot rounded-3 m-3 p-3">
+					<form action="/result-product" method="POST">
+						<div class="mb-3">
+							<label for="brand" class="form-label">Brand</label>
+							<input type="text" class="form-control" name="brand" placeholder="Why">
+						</div>
+						<div class="mb-3">
+							<label for="model" class="form-label">Model</label>
+							<input type="text" class="form-control" name="model" placeholder="NK50SZ">
+						</div>
+						<div class="mb-3">
+							<label for="disabledSelect" class="form-label">Years</label>
+							<select id="disabledSelect" class="form-select" name="year">
+								{% set currentDate = "now"|date("Y") %}
+								{% set firstDate = currentDate|date_modify("+40 year")|date("Y") %}
+								{% for i in firstDate.. currentDate %}
+									<option>{{ i }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<button type="submit" class="btn btn-outline-success">Submit</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	{% endif %}
+{% endblock %}

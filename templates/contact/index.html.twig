@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block title %} Contact {% endblock %}
+{% block body %}
+    <section class="container pb-5">
+        <div class="container-lg d-flex aligns-items-center justify-content-center my-2">
+            <img src="{{ asset('build/img/crea-title-contact-300.png') }}" width="300px" height="300px" alt="Research image"/>
+        </div>
+        <div class="container-lg text-center my-3">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="container-fluid col-12 card border-success-ot rounded-3">
+            <div id="map">
+                <!-- Ici s'affichera la carte -->
+            </div>
+        </div>
+        <div class="row justify-content-center px-5 pb-5">
+            <div class="col-12 col-lg-5 col-md-12 col-sm-6 card bg-green-light border-success-ot rounded-3 m-3 p-3">
+                <div class="mb-3">
+                    <h4 class="text-white text-center">Let's get in touch</h4>
+                    <p class="text-center">We're open for any suggestion or just to have a chat</p>
+                    <hr class="text-white">
+                </div>
+                <div class="mb-3 ps-5">
+                    <i class="fa fa-map-marker icon-rounded me-2"></i>
+                    <span class="text-white">Address: 6 place Charles Hernu, 69100 Villeurbanne</span>
+                </div>
+                <div class="mb-3 ps-5">
+                    <i class="fa fa-phone icon-rounded me-2"></i>
+                    <span class="text-white">Phone: (+33) 612345678</span>
+                </div>
+                <div class="mb-3 ps-5">
+                    <i class="fa fa-paper-plane icon-rounded me-2"></i>
+                    <span class="text-white">Email: <a class="nav-link contact" href="mailto:info@obsolescence-tracker.teck">info@obsolescence-tracker.teck</a></span>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-5 col-md-12 col-sm-6 card border-success-ot rounded-3 m-3 p-3">
+                <form method="POST">
+                    <div class="py-2">
+                        <label class="label" for="name">Full Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                    </div>
+                    <div class="py-2">
+                        <label class="label" for="email">Email Address</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="py-2">
+                        <label class="label" for="subject">Subject</label>
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                    </div>
+                    <div class="py-2">
+                        <label class="label" for="#">Message</label>
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

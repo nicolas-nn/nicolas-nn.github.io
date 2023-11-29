@@ -1,0 +1,77 @@
+App\Entity\Product :
+
+  Corsair :
+    brand: Corsair
+    reference: A1600
+    date: <(new \DateTime('2022-10-25'))>
+    demountability: 10
+    documentation: 5
+    spare_part: 4
+    specific_criterion: 3
+    price_spart_parts: 6
+    imageName: default.png
+  Why:
+    brand: Why
+    reference: NK50SZ
+    date: <(new \DateTime('2022-07-15'))>
+    demountability: 5
+    documentation: 6
+    spare_part: 7
+    price_spartParts: 6
+    specific_criterion: 2
+    imageName: default.png
+
+  Laptop:
+    brand: Laptop
+    reference: FRANBP0000
+    date: <(new \DateTime('2021-03-15'))>
+    demountability: 2
+    documentation: 8
+    spare_part: 7
+    price_spartParts: 5
+    specific_criterion: 4
+    imageName: default.png
+
+  Razer:
+    brand: Razer
+    reference: RZ090409
+    date: <(new \DateTime('2021-06-15'))>
+    demountability: 3
+    documentation: 5
+    spare_part: 1
+    price_spartParts: 4
+    specific_criterion: 3
+    imageName: default.png
+
+  Microsoft:
+    brand: Microsoft
+    reference: HNN-00005
+    date: <(new \DateTime('2020-12-06'))>
+    demountability: 3
+    documentation: 4
+    spare_part: 1
+    price_spartParts: 6
+    specific_criterion: 8
+    imageName: default.png
+
+  Intel:
+    brand: Intel
+    reference: Ips-3k
+    date: <(new \DateTime('2020-07-18'))>
+    demountability: 7
+    documentation: 6
+    spare_part: 8
+    price_spartParts: 2
+    specific_criterion: 6
+    imageName: default.png
+
+  Asus:
+    brand: Asus
+    reference: Zephyrius
+    date: <(new \DateTime('2020-12-06'))>
+    price_spartParts: 4
+    specific_criterion: 5
+    demountability: 6
+    documentation: 7
+    spare_part: 8
+    imageName: default.png

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Product{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Edit Product</h1>
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                {{ form_start(form) }}
+                <fieldset>
+                    <legend>Name</legend>
+                    {{ form_row(form.brand) }}
+                </fieldset>
+
+
+                <fieldset>
+                    <legend>Characteristic</legend>
+                    {{ form_row(form.imageFile) }}
+                    {{ form_row(form.reference) }}
+                    {{ form_row(form.date) }}
+                    {{ form_row(form.demountability) }}
+                    {{ form_row(form.documentation) }}
+                    {{ form_row(form.spare_part) }}
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Modify Product</button>
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+/* description */
+
+.description {
+    display:flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+}
+
+.block-obso{
+    width:55%; 
+    display:flex;
+    align-items: center;
+}
+
+.card-logo-obso{
+    width: 25%;
+   }
+
+.listProduct{
+   display:flex;
+   
+   justify-content: center;
+   
+}
+
+.card-logo-obso-list{
+    width: 90%;
+   }
+
+.box-logo-obso-list{
+    width: 15%;
+   }
+
+.button-detail-product{
+    text-align: right;
+}
+.sentence-no-ref{
+    text-align: center; 
+}
+
+.align-number{text-align: center;}
+
+.index-obso{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.button-end{
+    text-align: end;
+}
+
+.button-back{
+    padding: 20px;
+}

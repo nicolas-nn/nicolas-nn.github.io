@@ -1,0 +1,15 @@
+App\Entity\DescriptionObsolescence :
+
+  Good :
+    description: It's a good choice because ...
+    status: good
+    logo: logo-pc-1.png
+  Average:
+    description: It's an average choice because ...
+    status: average
+    logo: logo-pc-2.png
+
+  Bad:
+    description: It's a bad choice because ...
+    status: bad
+    logo: logo-pc-3.png

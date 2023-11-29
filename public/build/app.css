@@ -1,0 +1,252 @@
+.green{
+    color:#589F50;
+}
+
+.gold{
+    color:#EBB01B;
+}
+
+/* Bouton */
+.btn-outline-success-footer{
+    --bs-btn-color:#589F50;
+    --bs-btn-bg:#f6f6f6;
+    --bs-btn-border-color:#589F50;
+    --bs-btn-hover-color:#f6f6f6;
+    --bs-btn-hover-bg:#589F50;
+    --bs-btn-hover-border-color:#589F50;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-active-color:#f6f6f6;
+    --bs-btn-active-bg:#589F50;
+    --bs-btn-active-border-color: #589F50;
+    --bs-btn-active-shadow: none;
+    --bs-btn-disabled-color:#589F50;
+    --bs-btn-disabled-bg:#f6f6f6;
+    --bs-btn-disabled-border-color:#589F50;
+    --bs-gradient:none;
+}
+
+.btn-outline-warning{
+    --bs-btn-color:#EBB01B;
+    --bs-btn-bg:#f6f6f6;
+    --bs-btn-border-color:#EBB01B;
+    --bs-btn-hover-color:#f6f6f6;
+    --bs-btn-hover-bg:#EBB01B;
+    --bs-btn-hover-border-color:#EBB01B;
+    --bs-btn-focus-shadow-rgb:255,133,27;
+    --bs-btn-active-color:#f6f6f6;
+    --bs-btn-active-bg:#EBB01B;
+    --bs-btn-active-border-color:#EBB01B;
+    --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color:#EBB01B;
+    --bs-btn-disabled-bg:#f6f6f6;
+    --bs-btn-disabled-border-color:#EBB01B;
+    --bs-gradient:none
+}
+
+.btn-outline-success{
+    --bs-btn-color:#589F50;
+    --bs-btn-bg:#f6f6f6;
+    --bs-btn-border-color:#589F50;
+    --bs-btn-hover-color:#f6f6f6;
+    --bs-btn-hover-bg:#589F50;
+    --bs-btn-hover-border-color:#589F50;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-active-color:#f6f6f6;
+    --bs-btn-active-bg:#589F50;
+    --bs-btn-active-border-color: #589F50;
+    --bs-btn-active-shadow: none;
+    --bs-btn-disabled-color:#589F50;
+    --bs-btn-disabled-bg:#f6f6f6;
+    --bs-btn-disabled-border-color:#589F50;
+    --bs-gradient:none;
+}
+
+.bg-green{
+    background-color: rgb(0, 29, 20);
+}
+
+.bg-green-light{
+    background-color: #589F50;
+}
+
+/* Video styles */
+.video-container {
+    position: relative;
+}
+
+video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0, 29, 20, 0.7);
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nav-link{
+    padding: 2px 0;
+}
+
+/* Link header footer */
+.nav-link.header, .nav-link.footer{
+    color:#6c757d;
+}
+
+.nav-link.header:hover, .nav-link.footer:hover{
+    color:#589F50;
+}
+
+.navbar li{
+    list-style-type: none;
+}
+
+/* Hack container  */
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 0;
+}
+
+.accordion-button:not(.collapsed) {
+    color:#000;
+    background-color: rgba(88, 159, 80, 0.2);
+}
+
+.accordion-button:focus {
+    border-color: #589F50;
+}
+
+.contact-form .nav-link{
+    display: inline;
+}
+
+.collapse:not(.show) {
+    padding-left: 0px !important;
+}
+
+.btn-signup-navbar-collapse{
+    padding-bottom: 4px;
+}
+
+.border-success-ot {
+    border-color: #589F50;
+}
+
+a.nav-link.contact{
+    display:inline-block;
+}
+
+.accordion {
+    --bs-accordion-border-color: rgba(88, 159, 80, 0.7);
+}
+
+/* Responsive */
+
+/* Ecran avec une largeur entre 375px et 576px */
+@media (min-width: 375px) and  (max-width: 575px) {
+
+}
+
+/* Ecran avec une largeur 576px */
+@media (min-width: 576px) {
+
+}
+
+/* Ecran avec une largeur 768px */
+@media (min-width: 768px) {
+
+}
+
+/* Ecran avec une largeur de 992px */
+@media (min-width: 992px) {
+    a.nav-link.header:hover{
+        color:#589F50;
+        background-color: #f6f6f6;
+        border-radius: 0px;
+    }
+}
+
+/* Ecran avec une largeur min de 1024 */
+@media (min-width: 1200px) {
+    a.nav-link.header:hover{
+        color:#589F50;
+        background-color: #f6f6f6;
+        border-radius: 0px;
+    }
+}
+
+/* Ecran avec une largeur min de 1280 */
+@media (min-width: 1400px) {
+    a.nav-link.header:hover{
+        color:#589F50;
+        background-color: #f6f6f6;
+        border-radius: 0px;
+    }
+
+    /* Video styles */
+    .video-container {
+        position: relative;
+    }
+
+    video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .content {
+        position: relative;
+        width: 100vw;
+        height: 60vh;
+        color: #fff;
+        text-align: center;
+        background-color: rgba(0, 29, 20, 0.7);
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+.client-name{
+    font-weight: bold;
+}
+
+.title-hello{
+    margin-right: 10px;
+}
+
+@media (max-width: 991px) {
+    .title-hello{
+          margin-bottom: 2px;
+
+}}
+
+.dim-logo-carre{
+    width: 85px;
+    height: 66px;
+}
+@media (max-width: 991px) {
+    .logo-rectangle{
+          display: none;
+        }
+    .logo-carre{
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .logo-carre{
+        display: none;
+
+
+    }
+}
+
+#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+    height:500px;
+}

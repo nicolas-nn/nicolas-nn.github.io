@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+{% block title %}Obsolescence tracker - Home{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="video-container">
+                <video muted loop autoplay>
+                    <source src="{{ asset('build/video/bg-index-vid.mp4') }}" type="video/mp4">
+                </video>
+                <div class="content">
+                    <h1 class="display-1 fw-bold text-white">Welcome</h1>
+                    <h2 class="display-4 gold">Obsolescence tracker</h2>
+                    <h3 class="display-5 text-white">Time longer the better !</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-6 m-auto">
+                    <h2 class="green">What is planned obsolescence?</h2>
+                    <p style="text-align:justify">According to French law, programmed obsolescence is "all techniques, including software, by which the person responsible for placing a product on the market deliberately aims to reduce its lifespan". In 2020 in France only 40% of electrical and electronic appliances that break down are repaired.</p>
+                    <h5 class="fw-bold">Do you want to know the durability of your product?</h5>
+                    <button class="btn btn-outline-success" type="button">
+                        <a class="nav-link" href="/research" role="button">Click me</a>
+                    </button>
+                </div>
+                <div class="col-6 d-flex aligns-items-center justify-content-center">
+                    <img src="{{ asset('build/img/air_conditioner_device_2.png') }}" width="400px" height="400px" class="img-fluid" alt="Illustration obsolescence tracker">
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid bg-green">
+            <div class="container py-5">
+                <h2 class="gold">An act of citizenship? Even more so!</h2>
+                <p class="text-white" style="text-align:justify">In order to reduce waste, the government aims to increase this proportion to 60% within five years by introducing a reparability index to be displayed in shops. The reparability index is a mandatory note to be displayed on products at the time of purchase. This measure was introduced on 1 January 2021 as part of the anti-waste law promulgated on 10 February 2020, and covers several types of appliance. The aim of this index is to make consumers aware of the need to repair products as soon as they are purchased by informing them of the repairability of their appliance.
+                    A score is given by the appliance manufacturer for each of the criteria according to the rating grids defined by the Ministry of Ecological Transition. The final score of the reparability index is an average of the criteria represented by a score out of 10 for the consumer.</p>
+                <button class="btn btn-outline-success" type="button">
+                    <a class="nav-link" href="https://www.ecologie.gouv.fr/indice-reparabilite">Read more</a>
+                </button>
+            </div>
+        </div>
+
+        <div class="container py-5" id="hanging-icons">
+            <h2 class="green">What are the environmental rating criteria for computers?</h2>
+            <div class="row g-5 py-3 row-cols-1 row-cols-lg-5">
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square bg-secondary text-dark flex-shrink-0 me-3 green">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
+                            <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Documentation</h4>
+                        <p>Duration of availability of the technical documentation and advice on use and maintenance.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square bg-secondary text-dark flex-shrink-0 me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+                            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Demountability</h4>
+                        <ul>
+                            <li>Ease of disassembly of the parts in the list</li>
+                            <li>Tools required</li>
+                            <li>Characteristics of the fasteners between the parts</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square bg-secondary text-dark flex-shrink-0 me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-puzzle-fill" viewBox="0 0 16 16">
+                            <path d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.459.459 0 0 0-.115.118.113.113 0 0 0-.012.025L6.5 4.5v.003l.003.01c.004.01.014.028.036.053a.86.86 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.86.86 0 0 0 .271-.194.213.213 0 0 0 .036-.054l.003-.01v-.008a.112.112 0 0 0-.012-.025.459.459 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.459.459 0 0 0 .115-.118.113.113 0 0 0 .012-.025L9.5 11.5v-.003l-.003-.01a.214.214 0 0 0-.036-.053.859.859 0 0 0-.27-.194C8.91 11.1 8.49 11 8 11c-.491 0-.912.1-1.19.24a.859.859 0 0 0-.271.194.214.214 0 0 0-.036.054l-.003.01v.002l.001.006a.113.113 0 0 0 .012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238l-.244-2.855z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Spare part</h4>
+                        <ul>
+                            <li>Parts availability time</li>
+                            <li>Delivery time of the parts</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square bg-secondary text-dark flex-shrink-0 me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tags-fill" viewBox="0 0 16 16">
+                            <path d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                            <path d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043-7.457-7.457z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Spare parts price</h4>
+                        <p>The ratio between price of broken / manufacturing parts and price of the product.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square bg-secondary text-dark flex-shrink-0 me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Specific criterion</h4>
+                        <ul>
+                            <li>Information about type of updates</li>
+                            <li>Free remote assistance</li>
+                            <li>Possibility to reset softwares</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

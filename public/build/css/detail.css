@@ -1,0 +1,198 @@
+.return{
+    display:flex;
+    /* border: 2px solid grey; */
+    /* border-radius: 10px; */
+    justify-content: flex-start;
+}
+.return i {
+    border: 2px solid #EBB01B;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 3px 2px #EBB01B;
+}
+
+.return p {
+    
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    padding: 10px;
+}
+.detailProduct{
+    display: flex;
+    /* border: black 2px solid; */
+    border-radius: 10px;
+
+}
+canvas {
+    /* border: 1px dotted red; */
+    padding: 40px;
+    margin: 10px;
+}
+/* .allCharts{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border: black 2px solid; 
+    border-radius: 10px; 
+    display:flex;
+    flex-flow: row wrap;
+}*/
+.histogram {
+    margin : 0;
+    width: 300px;
+    height: 300px;
+   
+    background-color: pink;
+}
+.pieChart {
+    margin : 0;
+    width: 300px;
+    height: 300px;
+  
+    background-color: orange;
+}
+.lineChart {
+    margin : 0;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(167, 143, 143); 
+} 
+
+/* .allCharts {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+.allCharts>div {
+  text-align: center;
+  padding: 20px 0;
+  margin: 5px;
+} */
+/*
+@media(max-width:576px) {
+    .allCharts {
+        flex-direction: column;
+         flex-flow: row wrap; 
+        background-color: red;
+    }
+     .allCharts>.histogram {
+        order: 1;
+        flex: 0.5;
+    }
+    .allCharts>.lineChart {
+        order: 2;
+        flex: 0.5;
+    }
+    .allCharts>.pieChart {
+        order: 3;
+        width: 100%;
+    } 
+  }
+  @media(min-width: 577px) and (max-width: 767px) {
+    .allCharts {
+        flex-direction: column;
+        flex-wrap: wrap;
+       flex-flow: row nowrap; 
+    }
+    /* .allCharts>div {
+      width: 33.33% !important;
+    }
+    .allCharts>.histogram {
+      order: 1;
+    }
+    .allCharts>.pieChart {
+      order: 2;
+    }
+    .allCharts>.lineChart {
+      order: 3;
+    } 
+  }
+  @media(min-width:768px) {
+    .allCharts {
+        flex-direction: row;
+        flex-wrap: wrap;
+      flex-flow: row nowrap; 
+    }
+     .allCharts>div {
+      width: 33.33% !important;
+    }
+    .allCharts>.histogram {
+      order: 1;
+    }
+    .allCharts>.pieChart {
+      order: 2;
+    }
+    .allCharts>.lineChart {
+      order: 3;
+    } 
+  }*/
+  
+/* Responsive */
+
+/* Ecran avec une largeur entre 375px et 576px */
+@media (min-width: 375px) and  (max-width: 575px) {
+    .allCharts{
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        justify-content: center;
+    }
+}
+
+/* Ecran avec une largeur 576px */
+@media (min-width: 576px) {
+    .allCharts{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .pieChart .lineChart .histogram {
+        width: 100%;
+    }
+}
+
+/* Ecran avec une largeur 768px */
+@media (min-width: 768px) {
+    .allCharts{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .pieChart{
+        width: 300px;
+    }
+}
+
+/* Ecran avec une largeur de 992px */
+@media (min-width: 992px) {
+
+    .allCharts{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Ecran avec une largeur min de 1024 */
+@media (min-width: 1200px) {
+
+    .allCharts{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Ecran avec une largeur min de 1280 */
+@media (min-width: 1400px) {
+
+
+
+}
